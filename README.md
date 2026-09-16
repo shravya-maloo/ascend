@@ -59,3 +59,33 @@ ascend/
 ├── azure-pipelines-frontend.yml # Frontend CI/CD pipeline
 ├── requirements.txt             # Python dependencies
 └── .env.example                 # Environment variable template
+```
+
+
+## Architecture
+
+Ascend was designed as a cloud-connected application with separate frontend, backend, database, AI, and infrastructure components.
+
+```text
+                    ┌──────────────────┐
+                    │     Web App      │
+                    │    Frontend     │
+                    └────────┬─────────┘
+                             │
+                             ▼
+                    ┌──────────────────┐
+                    │   API / Backend  │
+                    └───────┬───┬──────┘
+                            │   │
+                 ┌──────────┘   └──────────┐
+                 ▼                         ▼
+        ┌─────────────────┐       ┌─────────────────┐
+        │    Database     │       │   AI Services   │
+        │ Employee / Data │       │ Chatbot / Quiz  │
+        └─────────────────┘       └─────────────────┘
+                            │
+                            ▼
+                    ┌──────────────────┐
+                    │  Azure Resources │
+                    │  & Deployment    │
+                    └──────────────────┘
