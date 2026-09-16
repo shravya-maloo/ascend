@@ -89,3 +89,50 @@ Ascend was designed as a cloud-connected application with separate frontend, bac
                     │  Azure Resources │
                     │  & Deployment    │
                     └──────────────────┘
+```
+
+
+## Data model
+
+Ascend organizes data around employees, teams, training, quizzes, and performance tracking.
+
+```text
+Employee
+├── id
+├── name
+├── email
+├── role
+└── teamId
+
+Team
+├── id
+├── name
+└── employeeIds
+
+Training
+├── id
+├── title
+├── description
+├── documents
+└── completionStatus
+
+Quiz
+├── id
+├── trainingId
+├── questions
+├── answers
+└── score
+
+Performance
+├── employeeId
+├── attendance
+├── quizScores
+├── trainingProgress
+└── points
+
+Certification
+├── id
+├── employeeId
+├── trainingId
+├── status
+└── completionDate
